@@ -25,12 +25,27 @@ export default function TabLayout() {
           },
           default: {},
         }),
-      }}>
+      }}
+      initialRouteName="home"
+    >
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="analyze"
+        options={{
+          title: 'Analyze',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="chart.bar.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="index"
+        options={{
+          href: null,
         }}
       />
       <Tabs.Screen

@@ -1,50 +1,61 @@
-# Welcome to your Expo app 👋
+# Libra Mobile - Financial Metrics Analyzer
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native mobile app for analyzing financial metrics, built with Expo.
 
-## Get started
+## Features
 
-1. Install dependencies
+- Upload and analyze financial metric CSV data files
+- Support for multiple financial metrics:
+  - Price-to-Book (P/B) ratio
+  - Price-to-Earnings (P/E) ratio
+  - Price-to-Free Cash Flow (P/FCF) ratio
+  - Price-to-Sales (P/S) ratio
+  - Enterprise Value to EBITDA (EV/EBITDA) ratio
+- Visualize historical trends of financial metrics
+- Calculate expected returns based on different holding periods
+- Analyze relationship between metrics and future returns
 
-   ```bash
-   npm install
-   ```
+## Getting Started
 
-2. Start the app
+### Prerequisites
 
-   ```bash
-    npx expo start
-   ```
+- Node.js
+- npm or yarn
+- Expo Go app (for testing on physical devices)
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### Installation
 
 ```bash
-npm run reset-project
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Scan the QR code with the Expo Go app on your mobile device or use an emulator/simulator to preview the app.
 
-## Learn more
+## CSV File Format
 
-To learn more about developing your project with Expo, look at the following resources:
+The app expects CSV files for financial metrics with at least the following columns:
+- Date: The date of the measurement (YYYY-MM-DD format)
+- Ratio column: The value of the financial ratio (P/B, P/E, etc.)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Optional columns that will be recognized:
+- Company or Ticker: Company name or ticker symbol
 
-## Join the community
+## Usage
 
-Join our community of developers creating universal apps.
+1. Open the app and go to the "Analyze" tab
+2. Upload CSV files for the metrics you want to analyze
+3. Select a holding period (1, 3, 5, or 10 years)
+4. Tap "Start Analysis" to view the results
+5. Switch between different metric tabs to view analysis for each metric
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Technical Details
+
+- Built with React Native and Expo
+- Uses expo-router for navigation
+- Visualizations with react-native-chart-kit
+- CSV parsing with Papa Parse
+- UI components from react-native-paper
